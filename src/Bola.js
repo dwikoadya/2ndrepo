@@ -34,11 +34,13 @@ class Bola extends Component {
     submit = () => {
         this.setState({
             commentHandler: '',
-            comments: [...this.state.comments, {
+            comments: [...this.state.comments , {
+                timeHandler: this.state.timeHandler
                 commentHandler: this.state.commentHandler,
                 nameHandler: this.state.nameHandler,
                 photoHandler: this.state.photoHandler,
-                dateHandler: this.state.dateHandler
+                dateHandler: this.state.dateHandler,
+                notifHandler: this.state.notifHandler,
             }]
         })
     }
@@ -52,6 +54,7 @@ class Bola extends Component {
             <button onClick={this.submit}>Submit</button>
             {this._renderComment()}
             </div>
+
         )
     }
 }
